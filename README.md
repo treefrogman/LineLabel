@@ -21,6 +21,18 @@ new LineLabel( path, text, layers, [ opts = {
 
 - `opts`  
 	The optional options.
+
+## Layers
+```js
+layers( [
+	{ elem: 'back', css: 'blackLabelBorder' },
+	{ elem: 'back', css: 'whiteLabelBack' },
+	{ elem: 'text', css: 'blackLabelText' }
+] )
+```
+The `layers` parameter consists of an ordered list of graphical layers to be generated and the CSS class to apply to each.
+Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as a CSS class name to apply to the element. 
+
 ## Options
 - `trim: [ 0, 0 ]`  
 	For the purpose of calculating lengths and positions, pretend the path is longer or shorter on each end. Lengths are in pixels; positive numbers shorten the path.
@@ -42,17 +54,6 @@ new LineLabel( path, text, layers, [ opts = {
 
 - `align: left | center | right` (only applicable in `single` mode)  
 	Align the label on the path. `trim`, `flip`, and `margins` are taken into account in calculating the final placement.
-
-## Layers
-```js
-layers( [
-	{ elem: 'back', css: 'blackLabelBorder' },
-	{ elem: 'back', css: 'whiteLabelBack' },
-	{ elem: 'text', css: 'blackLabelText' }
-] )
-```
-The `layers` parameter consists of an ordered list of graphical layers to be generated and the CSS class to apply to each.
-Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as a CSS class name to apply to the element. 
 
 # Methods
 #### `path( [ path ] )`
