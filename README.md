@@ -67,7 +67,7 @@ Get or replace the array of layer objects.
 
 #### `opts( [ opts ] )`
 - `opts()`  
-	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options.  
+	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `opt( 'optname' )` to get the dominant value for a given option.
 - `opts( opts )`  
 	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, call `opts( null )`.
 
