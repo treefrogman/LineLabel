@@ -5,7 +5,7 @@ JavaScript library for adding inline labels to any SVG path. Useful for roadmaps
 # Constructor
 
 ```js
-new LineLabel( path, text, [ opts = {
+new LineLabel( path, text, layers, [ opts = {
 	...
 } ] );
 ```
@@ -16,6 +16,9 @@ new LineLabel( path, text, [ opts = {
 - `text`  
 	The text content of the label.
 	
+- `layers`  
+	An array, in stacking order, of layer objects. See below for details.
+
 - `opts`  
 	The optional options.
 ## Options
@@ -40,7 +43,16 @@ new LineLabel( path, text, [ opts = {
 - `align: left | center | right` (only applicable in `single` mode)  
 	Align the label on the path. `trim`, `flip`, and `margins` are taken into account in calculating the final placement.
 
-
+## Layers
+```js
+layers( [
+	{ elem: 'back', css: 'blackLabelBorder' },
+	{ elem: 'back', css: 'whiteLabelBack' },
+	{ elem: 'text', css: 'blackLabelText' }
+] )
+```
+The `layers` parameter consists of an ordered list of graphical layers to be generated and the CSS class to apply to each.
+Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as a CSS class name to apply to the element. 
 
 # Methods
 #### `path( [ path ] )`
@@ -49,11 +61,14 @@ Get or set the SVG element to which the label shall be shaped. If set, update al
 #### `text( [ text ] )`
 Get or set the text content of the label. If set, update all graphical components.
 
+#### `layers( [ layers ] )`
+Get or replace the array of layer objects.
+
 #### `opts( [ opts ] )`
-- With argument
-	- Get or set the options. If set, update all graphical components.
-- With argument
-	- Set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, call `opts( null )`.
+- `opts()`  
+	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options.  
+- `opts( opts )`  
+	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, call `opts( null )`.
 
 #### `element()`
 Return an SVG group element containing all graphical components.
