@@ -56,10 +56,10 @@ Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as 
 
 # Methods
 #### `path( [ path ] )`
-Get or set the SVG element to which the label shall be shaped. If set, update all graphical components.
+Get or set the SVG element to which the label shall be shaped.
 
 #### `text( [ text ] )`
-Get or set the text content of the label. If set, update all graphical components.
+Get or set the text content of the label.
 
 #### `layers( [ layers ] )`
 Get or replace the array of layer objects.
