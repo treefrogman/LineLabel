@@ -1,6 +1,6 @@
 ![LineLabel logo](line-label-logo.jpg)
 # LineLabel
-JavaScript library for adding inline labels to any SVG path
+JavaScript library for adding inline labels to any SVG path. Useful for roadmaps, diagrams, and most especially [Nøde](https://github.com/treefrogman/NodeOpDevEnvironment).
 
 # Constructor
 
