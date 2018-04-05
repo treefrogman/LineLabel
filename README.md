@@ -78,7 +78,7 @@ Update all graphical components. Should be called manually after making any chan
 
 
 # Roadmap
-A good bit of the functionality has [already been implemented inside Nøde](https://github.com/treefrogman/NodeOpDevEnvironment/blob/master/js/connector.js), but needs to be refactored and made more customizable.
+A good bit of the functionality has [already been implemented in the Nøde codebase](https://github.com/treefrogman/NodeOpDevEnvironment/blob/master/js/connector.js), but needs to be refactored and made more customizable.
 
 The API has been specified, but needs review and possible refinement before moving into development.
 
