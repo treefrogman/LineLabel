@@ -4,25 +4,19 @@ JavaScript library for adding inline labels to any SVG path. Useful for roadmaps
 
 # Constructor
 
-```js
-new LineLabel( path, text, layers, [ opts = {
-	...
-} ] );
-```
+<pre>
+new LineLabel( path, text, layers, <i>options</i> );
+</pre>
+
 ## Parameters
-- `path`  
-	The SVG element to which the label shall be shaped.
-	
-- `text`  
-	The text content of the label.
-	
-- `layers`  
-	An array, in stacking order, of layer objects. See below for details.
+#### `path`  
+The SVG element to which the label shall be shaped.
 
-- `opts`  
-	The optional options.
+#### `text`  
+The text content of the label.
 
-## Layers
+#### `layers`
+An array, in stacking order, of layer objects.
 ```js
 layers( [
 	{ elem: 'back', css: 'blackLabelBorder' },
@@ -33,11 +27,12 @@ layers( [
 The `layers` parameter consists of an ordered list of graphical layers to be generated and the CSS class to apply to each.
 Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as a CSS class name to apply to the element. 
 
-## Options
+#### `options`
+An object containing any of the following key-value pairs.
 - `trim: [ 0, 0 ]`  
 	For the purpose of calculating lengths and positions, pretend the path is longer or shorter on each end. Lengths are in pixels; positive numbers shorten the path.
 	
-- `flip: 0b00`  
+- `flip: 0b00` <i><sub>v2 milestone</sub></i>  
 	Flip the text before shaping it to the path. A pair of bits representing horizontal and vertical flip respectively. Margins and baseline shift are flipped as well.
 	
 - `margins: [ 0, 0 ]`  
@@ -49,32 +44,32 @@ Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as 
 - `spacing: [ min = 0, max = 68 ]`  
 	Minimum and maximum spacing for multiple labels along the path. For short paths only a single centered label is drawn, or nothing if the space is too small. If there's room with `min` between, the one label is replaced with a label at each end of the path. When those labels are more than `max` apart, another label is added in between. This patterns goes on, distributing labels along the path so they are never more than `max` apart.
 
-- `single: false`  
+- `single: false` <i><sub>v2 milestone</sub></i>  
 	Disable the aforementioned label distribution method, and create a single label instead.
 
-- `align: left | center | right` (only applicable in `single` mode)  
+- `align: left | center | right` <sub>(only applicable in `single` mode) <i>v2 milestone</i></sub>  
 	Align the label on the path. `trim`, `flip`, and `margins` are taken into account in calculating the final placement.
 
 # Methods
-#### `path( [ path ] )`
+### <pre>path( <i>path</i> )</pre>
 Get or set the SVG element to which the label shall be shaped.
 
-#### `text( [ text ] )`
+### <pre>text( <i>text</i> )</pre>
 Get or set the text content of the label.
 
-#### `layers( [ layers ] )`
+### <pre>layers( <i>layers</i> )</pre>
 Get or replace the array of layer objects.
 
-#### `opts( [ opts ] )`
-- `opts()`  
-	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `opt( 'optname' )` to get the dominant value for a given option.
-- `opts( opts )`  
-	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, call `opts( null )`.
+### <pre>options( <i>options</i> )</pre>
+- `options()`  
+	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `option( option name )` to get the dominant value for a given option.
+- `options( options )`  
+	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, pass a `null` value to the `options` method.
 
-#### `element()`
+### <pre>element()</pre>
 Return an SVG group element containing all graphical components.
 
-#### `update()`
+### <pre>update()</pre>
 Update all graphical components. Should be called manually after making any changes to the label or the path's `d` attribute.
 
 
