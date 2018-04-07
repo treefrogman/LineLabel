@@ -29,7 +29,7 @@ An array, in stacking order, of layer objects. Each layer object has two keys:
 
 #### `options`
 An object containing any of the following key-value pairs.
-- `trim: [ 0, 0 ]`  
+- `trim: [ 0, 0 ]` <i><sub>negative values are either a v2 milestone, or not worth implementing at all</sub></i>  
 	For the purpose of calculating lengths and positions, pretend the path is longer or shorter on each end. Lengths are in pixels; positive numbers shorten the path.
 	
 - `flip: 0b00` <i><sub>v2 milestone</sub></i>  
