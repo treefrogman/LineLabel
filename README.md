@@ -10,9 +10,7 @@ __Table of Contents__
 
 # Constructor
 
-<pre>
-<b>lineLabel</b>( path, text, layers, <i>options</i> );
-</pre>
+<pre><b>lineLabel</b>( path, text, layers, <i>options</i> )</pre>
 
 ## Parameters
 #### `path`  
@@ -53,25 +51,25 @@ An object containing any of the following key-value pairs.
 	Align the label on the path. `trim`, `flip`, and `margins` are taken into account in calculating the final placement.
 
 # Methods
-### <pre>path( <i>path</i> )</pre>
+<pre><b>path</b>( <i>path</i> )</pre>
 Get or set the SVG element to which the label shall be shaped.
 
-### <pre>text( <i>text</i> )</pre>
+<pre><b>text</b>( <i>text</i> )</pre>
 Get or set the text content of the label.
 
-### <pre>layers( <i>layers</i> )</pre>
+<pre><b>layers</b>( <i>layers</i> )</pre>
 Get or replace the array of layer objects.
 
-### <pre>options( <i>options</i> )</pre>
+<pre><b>options</b>( <i>options</i> )</pre>
 - `options()`  
 	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `option( option name )` to get the dominant value for a given option.
 - `options( options )`  
 	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, pass a `null` value to the `options` method.
 
-### <pre>element()</pre>
+<pre><b>element</b>()</pre>
 Return an SVG group element containing all graphical components.
 
-### <pre>update()</pre>
+<pre><b>update</b>()</pre>
 Update all graphical components. Should be called manually after making any changes to the label or the path's `d` attribute.
 
 # Example
