@@ -5,7 +5,7 @@ JavaScript library for adding inline labels to any SVG path. Useful for roadmaps
 # Constructor
 
 <pre>
-new LineLabel( path, text, layers, <i>options</i> );
+new <b>LineLabel</b>( path, text, layers, <i>options</i> );
 </pre>
 
 ## Parameters
@@ -16,16 +16,12 @@ The SVG element to which the label shall be shaped.
 The text content of the label.
 
 #### `layers`
-An array, in stacking order, of layer objects.
-```js
-layers( [
-	{ elem: 'back', css: 'blackLabelBorder' },
-	{ elem: 'back', css: 'whiteLabelBack' },
-	{ elem: 'text', css: 'blackLabelText' }
-] )
-```
-The `layers` parameter consists of an ordered list of graphical layers to be generated and the CSS class to apply to each.
-Each layer object specifies `elem` as either `'text'` or `'back'`, and `css` as a CSS class name to apply to the element. 
+An array, in stacking order, of layer objects. Each layer object has two keys:
+- `elem`  
+	A string, either `'text'` or `'back'`, indicating which graphical element this layer should instantiate.
+
+- `css`  
+	The CSS class name to apply to the element.
 
 #### `options`
 An object containing any of the following key-value pairs.
@@ -71,6 +67,40 @@ Return an SVG group element containing all graphical components.
 
 ### <pre>update()</pre>
 Update all graphical components. Should be called manually after making any changes to the label or the path's `d` attribute.
+
+# Example
+_This would produce something close to the one I sharpied onto the cardboard at the top of this page_
+```css
+.blackLabelBorder, .whiteLabelBack {
+	stroke-linecap: round;
+	fill: none;
+}
+
+.blackLabelBorder {
+	stroke-width: 1.1em;
+	stroke: black;
+}
+.whiteLabelBack {
+	stroke-width: 1em;
+	stroke: white;
+}
+.blackLabelText {
+	/* Actually, I think the default style might do the trick on this one */
+}
+```
+
+```js
+var xmlns = "http://www.w3.org/2000/svg";
+var path = document.createElementNS( xmlns, 'path' );
+path.setAttributeNS( xmlns, curvyPathData );
+var text = "Line Label";
+var layers = [
+	{ elem: 'back', css: 'blackLabelBorder' },
+	{ elem: 'back', css: 'whiteLabelBack' },
+	{ elem: 'text', css: 'blackLabelText' }
+];
+var label = new LineLabel( path, text, layers, <i>options</i> );
+```
 
 
 # Roadmap
