@@ -99,7 +99,7 @@ var layers = [
 	{ elem: 'back', css: 'whiteLabelBack' },
 	{ elem: 'text', css: 'blackLabelText' }
 ];
-var label = new LineLabel( path, text, layers, <i>options</i> );
+var label = new LineLabel( path, text, layers );
 ```
 
 
