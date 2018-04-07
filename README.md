@@ -9,7 +9,7 @@ __Table of Contents__
 
 
 # Constructor
-
+<sup>Not really a constructor, but a factory. That means NO using the `new` token!</sup>
 <pre><b>lineLabel</b>( path, text, layers, <i>options</i> )</pre>
 
 ## Parameters
