@@ -71,20 +71,19 @@ Update all graphical components. Should be called manually after making any chan
 # Example
 _This would produce something close to the one I sharpied onto the cardboard at the top of this page_
 ```css
-.blackLabelBorder, .whiteLabelBack {
+.labelBorder, .labelBack {
 	stroke-linecap: round;
 	fill: none;
 }
-
-.blackLabelBorder {
+.labelBorder {
 	stroke-width: 1.1em;
 	stroke: black;
 }
-.whiteLabelBack {
+.labelBack {
 	stroke-width: 1em;
 	stroke: white;
 }
-.blackLabelText {
+.labelText {
 	/* Actually, I think the default style might do the trick on this one */
 }
 ```
@@ -95,9 +94,9 @@ var path = document.createElementNS( xmlns, 'path' );
 path.setAttributeNS( xmlns, curvyPathData );
 var text = "Line Label";
 var layers = [
-	{ elem: 'back', css: 'blackLabelBorder' },
-	{ elem: 'back', css: 'whiteLabelBack' },
-	{ elem: 'text', css: 'blackLabelText' }
+	{ elem: 'back', css: 'labelBorder' },
+	{ elem: 'back', css: 'labelBack' },
+	{ elem: 'text', css: 'labelText' }
 ];
 var label = new LineLabel( path, text, layers );
 ```
