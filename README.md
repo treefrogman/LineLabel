@@ -1,6 +1,12 @@
-![LineLabel logo](line-label-logo.jpg)
+<a name="cardboard">![LineLabel logo](line-label-logo.jpg)</a>
 # LineLabel
 JavaScript library for adding inline labels to any SVG path. Useful for roadmaps, diagrams, and most especially [Nøde](https://github.com/treefrogman/NodeOpDevEnvironment).
+
+__Table of Contents__  
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [Example](#example)
+
 
 # Constructor
 
@@ -69,7 +75,7 @@ Return an SVG group element containing all graphical components.
 Update all graphical components. Should be called manually after making any changes to the label or the path's `d` attribute.
 
 # Example
-_This would produce something close to the one I sharpied onto the cardboard at the top of this page_
+_This would produce something close to [the one I sharpied onto the cardboard at the top of this page](#cardboard)_
 ```css
 .labelBorder, .labelBack {
 	stroke-linecap: round;
