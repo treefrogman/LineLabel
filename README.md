@@ -5,7 +5,7 @@ JavaScript library for adding inline labels to any SVG path. Useful for roadmaps
 # Constructor
 
 <pre>
-new <b>LineLabel</b>( path, text, layers, <i>options</i> );
+<b>lineLabel</b>( path, text, layers, <i>options</i> );
 </pre>
 
 ## Parameters
@@ -98,7 +98,7 @@ var layers = [
 	{ elem: 'back', css: 'labelBack' },
 	{ elem: 'text', css: 'labelText' }
 ];
-var label = new LineLabel( path, text, layers );
+var label = lineLabel( path, text, layers );
 ```
 
 
