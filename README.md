@@ -1,5 +1,5 @@
-<a name="cardboard">![LineLabel logo](line-label-logo.jpg)</a>
-# LineLabel
+<a name="cardboard">![lineLabel logo](line-label-logo.jpg)</a>
+# lineLabel
 JavaScript library for adding inline labels to any SVG path. Useful for roadmaps, diagrams, and most especially [Nøde](https://github.com/treefrogman/NodeOpDevEnvironment).
 
 __Table of Contents__  
