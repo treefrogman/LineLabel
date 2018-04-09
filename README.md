@@ -62,7 +62,7 @@ Get or replace the array of layer objects.
 
 <pre><b>options</b>( <i>options</i> )</pre>
 - `options()`  
-	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `option( option name )` to get the dominant value for a given option.
+	Get the current options. Returns the options object, with an additional property called `defaults`, containing all the default options, and a method `get( option name )` to get the dominant value for a given option.
 - `options( options )`  
 	Set options. Does not unset any previously set options. To reset an option to default, assign a value of `null` to it in the options object. To reset all, pass a `null` value to the `options` method.
 
