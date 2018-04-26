@@ -27,6 +27,8 @@ An array, in stacking order, of layer objects. Each layer object has two keys:
 - `css`  
 	The CSS class name to apply to the element.
 
+The css styling of the last `'text'` layer will be used to calculate the bounding box of the text.
+
 #### `options`
 An object containing any of the following key-value pairs.
 - `trim: [ 0, 0 ]` <i><sub>negative values are either a v2 milestone, or not worth implementing at all</sub></i>  
