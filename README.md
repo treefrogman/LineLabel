@@ -21,7 +21,7 @@ The text content of the label.
 
 #### `layers`
 An array, in stacking order, of layer objects. Each layer object has two keys:
-- `elem`  
+- `element`  
 	A string, either `'text'` or `'back'`, indicating which graphical element this layer should instantiate.
 
 - `css`  
@@ -98,9 +98,9 @@ var path = document.createElementNS( xmlns, 'path' );
 path.setAttributeNS( xmlns, curvyPathData );
 var text = "Line Label";
 var layers = [
-	{ elem: 'back', css: 'labelBorder' },
-	{ elem: 'back', css: 'labelBack' },
-	{ elem: 'text', css: 'labelText' }
+	{ element: 'back', css: 'labelBorder' },
+	{ element: 'back', css: 'labelBack' },
+	{ element: 'text', css: 'labelText' }
 ];
 var label = lineLabel( path, text, layers );
 ```
