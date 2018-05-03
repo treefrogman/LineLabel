@@ -42,10 +42,8 @@
 			update: function () {
 				// This is where the magic will happen.
 				console.log( "Wish real hard on those magic beans!" );
-				layerElements
 				// Okay, so I need to create an element for each item in the layers array, and put those elements in the layerElements array. I have a conundrum: do I blindly rebuild that set of elements each time, or do I intelligently update only what I need to to satisfy changes in the layers array?
-				// I think the answer is an internal function updateLayers, triggered in the options method when the newOptions object contains a non-null layers array.
-				element.
+				// I think the answer is an internal function updateLayers, triggered in the options method when the newOptions object contains a non-null layers array. Uhm, I'm dumb. The layers are their own object, not an option. Yay.
 			}
 		};
 		var defaults = {
